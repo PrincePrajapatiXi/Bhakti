@@ -1,0 +1,81 @@
+body {
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9933, #ffcc66);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    text-align: center;
+    color: #d2691e;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #b8860b;
+    font-size: 1.8rem;
+    margin: 25px 0 15px 0;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.verse {
+    background: #fffef7;
+    padding: 15px 20px;
+    margin: 12px 0;
+    border-left: 4px solid #ff6600;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.doha-section .verse {
+    border-left-color: #dc143c;
+    background: #fff5f5;
+}
+
+.closing-doha .verse {
+    border-left-color: #228b22;
+    background: #f0fff0;
+}
+
+.aarti .verse {
+    border-left-color: #9932cc;
+    background: #f8f0ff;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+        margin: 10px;
+    }
+    
+    .title {
+        font-size: 2rem;
+    }
+    
+    .verse {
+        font-size: 1.1rem;
+        padding: 12px 15px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
