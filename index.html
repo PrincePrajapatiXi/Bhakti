@@ -3,34 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>आपका स्वागत है</title>
+    <title>धर्म संग्रह - मंत्र एवं स्तुति</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <div class="chat-container">
-        
-        <div class="message center">
-            <div class="bubble">आपका स्वागत है</div>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo-section">
+                <h1>🕉️ धर्म संग्रह</h1>
+                <p>मंत्र एवं स्तुति का पवित्र संग्रह</p>
+            </div>
         </div>
+    </header>
 
-        <div class="message left">
-            <a href="Hanu.html" target="_blank"><div class="bubble">हनुमान चालीसा</div></a>
+    <main>
+        <section class="search-section">
+            <div class="container">
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="मंत्र खोजें...">
+                    <select id="categoryFilter">
+                        <option value="सभी">सभी</option>
+                        <option value="हनुमान">हनुमान</option>
+                        <option value="शिव">शिव</option>
+                        <option value="राम">राम</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="prayer-categories">
+            <div class="container">
+                <h2>मंत्र एवं स्तुति संग्रह</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="हनुमान">
+                        <div class="icon">🙏</div>
+                        <h3>हनुमान चालीसा</h3>
+                        <p>श्री हनुमान जी की स्तुति</p>
+                        <a href="Hanu.html"><button class="read-btn">पढ़ें</button></a>
+                    </div>
+                    
+                    <div class="category-card" data-category="शिव">
+                        <div class="icon">🔱</div>
+                        <h3>शिव स्तुति</h3>
+                        <p>भगवान शिव के मंत्र</p>
+                        <button class="read-btn">पढ़ें</button>
+                    </div>
+                    
+                    <div class="category-card" data-category="राम">
+                        <div class="icon">🏹</div>
+                        <h3>श्री राम स्तुति</h3>
+                        <p>भगवान श्री राम के मंत्र</p>
+                        <button class="read-btn">पढ़ें</button>
+                    </div>
+                    
+                    <div class="category-card" data-category="गायत्री">
+                        <div class="icon">☀️</div>
+                        <h3>गायत्री मंत्र</h3>
+                        <p>महामंत्र गायत्री</p>
+                        <button class="read-btn">पढ़ें</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 धर्म संग्रह - सभी अधिकार सुरक्षित</p>
         </div>
+    </footer>
 
-        <div class="message right">
-            <div class="bubble">आपका स्वागत है</div>
-        </div>
-
-        <div class="message left">
-            <div class="bubble">आपका स्वागत है</div>
-        </div>
-
-        <div class="message right">
-            <div class="bubble">आपका स्वागत है</div>
-        </div>
-
-    </div>
-
+    <script src="script.js"></script>
 </body>
 </html>

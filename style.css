@@ -1,84 +1,321 @@
-body {
-    background: #ff7722;
+* {
     margin: 0;
-    padding: 20px 0;
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.chat-container {
-    max-width: 800px;
+body {
+    font-family: 'Noto Sans Devanagari', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #FFF8DC 0%, #F0F8FF 100%);
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-.message {
-    margin-bottom: 12px;
+/* Header Styles */
+.main-header {
+    background: rgba(255, 102, 0, 0.95);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.logo-section p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Search Section */
+.search-section {
+    padding: 2rem 0;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.search-bar {
     display: flex;
-    clear: both;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.message.center {
-    justify-content: center;
-}
-
-.message.left {
-    justify-content: flex-start;
-}
-
-.message.right {
-    justify-content: flex-end;
-}
-
-.bubble {
-    background: #003366;
-    color: #FFFFFF;
-    padding: 12px 18px;
-    border-radius: 18px;
-    display: inline-block;
-    max-width: 79%;
+#searchInput {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #FF6600;
+    border-radius: 25px;
     font-size: 16px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
+    outline: none;
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
 }
 
-.bubble:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+#searchInput:focus {
+    border-color: #FF4400;
+    box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.2);
 }
 
-/* Link styling */
-a {
-    text-decoration: none;
-    color: inherit;
+#categoryFilter {
+    padding: 12px 20px;
+    border: 2px solid #FF6600;
+    border-radius: 25px;
+    background: white;
+    font-size: 16px;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
 }
 
-a .bubble:hover {
-    background: #004488;
+/* Search enhancements */
+.search-bar {
+    position: relative;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 600px) {
-    .chat-container {
-        padding: 0 15px;
+#searchInput::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.no-results-message {
+    grid-column: 1 / -1;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+.no-results-message h3 {
+    color: #FF6600;
+    margin-bottom: 0.5rem;
+}
+
+/* Highlight search results */
+mark {
+    background: rgba(255, 102, 0, 0.3);
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+/* Loading animation for smooth filtering */
+.category-card.filtering {
+    opacity: 0.7;
+    transform: scale(0.98);
+}
+
+/* Enhanced button interactions */
+.read-btn:active {
+    transform: scale(0.95);
+}
+
+/* Search input focus improvements */
+#searchInput:focus + .search-suggestions {
+    display: block;
+}
+
+.search-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 100;
+    display: none;
+}
+
+/* Mobile search improvements */
+@media (max-width: 768px) {
+    .search-bar {
+        gap: 0.5rem;
     }
     
-    .message {
-        margin-bottom: 10px;
-    }
-    
-    .bubble {
-        max-width: 85%;
-        padding: 10px 15px;
-        font-size: 15px;
-        border-radius: 15px;
+    #searchInput {
+        font-size: 13px; /* Prevents zoom on iOS */
     }
 }
 
-/* Extra small screens */
-@media (max-width: 400px) {
-    .bubble {
-        max-width: 90%;
-        padding: 8px 12px;
-        font-size: 14px;
+
+/* Prayer Categories Section */
+.prayer-categories {
+    padding: 2rem 0;
+}
+
+.prayer-categories h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #FF6600;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.category-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #FF6600;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 102, 0, 0.1), transparent);
+    transition: left 0.6s;
+}
+
+.category-card:hover::before {
+    left: 100%;
+}
+
+.icon {
+    font-size: 1.5rem;
+    margin-bottom: .6rem;
+    display: block;
+}
+
+.category-card h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.category-card p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.read-btn {
+    background: #FF6600;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Noto Sans Devanagari', Arial, sans-serif;
+}
+
+.read-btn:hover {
+    background: #FF4400;
+    transform: scale(1.05);
+}
+
+/* Footer */
+.main-footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .logo-section h1 {
+        font-size: 1rem;
     }
+    
+    .search-bar {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .category-card {
+        padding: 25px 15px;
+    }
+    
+    .prayer-categories h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    .logo-section h1 {
+        font-size: 1.3rem;
+    }
+    
+    .logo-section p {
+        font-size: 0.5rem;
+    }
+    
+    .category-card {
+        padding: 17px 12px;
+    }
+    
+    .icon {
+        font-size: 2rem;
+    }
+}
+
+/* Animation for smooth loading */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.category-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.category-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.category-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.category-card:nth-child(4) {
+    animation-delay: 0.6s;
 }
