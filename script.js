@@ -87,19 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Add click handlers for prayer cards
-    categoryCards.forEach(card => {
-        const readBtn = card.querySelector('.read-btn');
-        if (readBtn) {
-            readBtn.addEventListener('click', function() {
-                const prayerTitle = card.querySelector('h3').textContent;
-                alert(`${prayerTitle} खोला जा रहा है...`);
-                // Here you can add navigation to specific prayer page
-                // window.location.href = `prayer.html?type=${encodeURIComponent(prayerTitle)}`;
-            });
-        }
-    });
-
     // Add smooth scroll animation for better UX
     function smoothScrollToTop() {
         window.scrollTo({
