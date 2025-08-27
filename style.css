@@ -143,19 +143,19 @@ mark {
     }
     
     #searchInput {
-        font-size: 13px; /* Prevents zoom on iOS */
+        font-size: 15px; /* Prevents zoom on iOS */
     }
 }
 
 
 /* Prayer Categories Section */
 .prayer-categories {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
 }
 
 .prayer-categories h2 {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #FF6600;
     margin-bottom: 2rem;
     font-weight: 600;
@@ -164,7 +164,7 @@ mark {
 .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+    gap: 1.3rem;
     margin-top: 1rem;
 }
 
@@ -207,7 +207,7 @@ mark {
 }
 
 .category-card h3 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: #333;
     margin-bottom: 0.5rem;
     font-weight: 600;
@@ -215,8 +215,8 @@ mark {
 
 .category-card p {
     color: #666;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+    margin-bottom: 1.3rem;
+    font-size: 1.3rem;
 }
 
 .read-btn {
@@ -248,7 +248,7 @@ mark {
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .logo-section h1 {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     
     .search-bar {
@@ -280,7 +280,7 @@ mark {
     }
     
     .logo-section p {
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
     
     .category-card {
