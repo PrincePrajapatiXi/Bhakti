@@ -62,20 +62,20 @@ h2 {
 /* Mobile Responsive */
 @media (max-width: 600px) {
     .container {
-        padding: 17px 12px;
-        margin: 7px;
+        padding: 20px 15px;
+        margin: 10px;
     }
     
     .title {
-        font-size: 0. 8rem;
+        font-size: 1rem;
     }
     
     .verse {
-        font-size: 0.5rem;
-        padding: 10px 13px;
+        font-size: 0.8rem;
+        padding: 12px 15px;
     }
     
     h2 {
-        font-size: 0.5rem;
+        font-size: 0.8rem;
     }
 }
